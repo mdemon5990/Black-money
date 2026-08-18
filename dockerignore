@@ -1,0 +1,6 @@
+README.md
+.git
+.gitignore
+admin.php
+*.log
+.DS_Store
