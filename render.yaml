@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: foxigrow
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 2 -b 0.0.0.0:$PORT app:app
+    healthCheckPath: /health
+    envVars:
+      - key: APP_NAME
+        value: FoxiGrow
+      - key: ADMIN_ID
+        value: "7034779471"
+      - key: PUBLIC_URL
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: WEBHOOK_SECRET
+        sync: false
+      - key: SETUP_SECRET
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false
+      - key: FIREBASE_CONFIGS_JSON
+        sync: false
